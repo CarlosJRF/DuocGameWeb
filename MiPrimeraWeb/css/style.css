@@ -1,91 +1,206 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
 
-        body {
-            font-family: "Oswald", sans-serif;
-            font-size: large;
-            background-color: rgb(2, 2, 78);
-            color: rgb(253, 194, 2);
-            line-height: 1.6;
-            min-height: 100vh;
-            margin: 0; /* Reseteo del margen por defecto del navegador */
-        }
+/* Reseteo general y Box-sizing */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-        header {
-            background-color: rgb(1, 1, 40);
-            border-bottom: 7px solid rgb(253, 194, 2); 
-            padding: 30px 20px 15px 20px; 
-            text-align: center;
-        }
+body {
+    font-family: "Oswald", Arial, sans-serif;
+    font-size: 1rem; /* Tamaños relativos */
+    background-color: rgb(2, 2, 78);
+    color: rgb(253, 194, 2);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 
-        nav ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
+/* HEADER Y NAV (FLEXBOX) */
+header {
+    background-color: rgb(1, 1, 40);
+    border-bottom: 7px solid rgb(253, 194, 2); 
+    padding: 30px 20px 15px 20px; 
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
 
-        nav a {
-            color: rgb(253, 194, 2);
-            text-decoration: none;
-        }
+nav {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Permitir que fluya en pantallas pequeñas */
+    margin-top: 15px;
+}
 
-        .categorias {
-            max-width: 1100px;
-            margin: 40px auto; 
-            padding: 0 20px; 
-        }
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
 
-        .btn {
-            background-color: rgb(253, 194, 2);
-            color: rgb(2, 2, 78);
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 15px;
-        }
+nav a {
+    color: rgb(253, 194, 2);
+    text-decoration: none;
+    transition: color 0.3s;
+}
 
-        #destacados {
-            background-color: rgba(0, 0, 0, 0.3); 
-            padding: 30px;
-            border-radius: 10px;
-            margin: 20px auto;
-            max-width: 1100px;
-        }
+nav a:hover {
+    color: rgb(255, 255, 255);
+}
 
-        #destacados ul {
-            display: flex;
-            gap: 20px;
-            list-style: none;
-            padding: 0;
-        }
+.btn {
+    background-color: rgb(253, 194, 2);
+    color: rgb(2, 2, 78);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
 
-        #destacados ul li {
-            flex: 1; 
-            background-color: rgb(15, 15, 100);
-            padding: 15px;
-            border-radius: 8px;
-            text-align: center;
-        }
+.btn:hover {
+    background-color: rgb(255, 255, 255);
+}
 
-        #destacados img {
-            border-radius: 5px;
-            max-width: 100%;
-        }
+/* ESTRUCTURA PRINCIPAL (CSS GRID) */
+.categorias {
+    max-width: 1100px;
+    margin: 40px auto; 
+    padding: 0 20px; 
+    display: grid;
+    grid-template-columns: 1fr; /* Diseño móvil por defecto */
+    gap: 30px;
+    flex-grow: 1; /* Empuja el footer hacia abajo */
+}
 
-        
-        
-        .lista-categorias li:nth-child(odd) a {
-            color: rgb(255, 255, 255); 
-        }
-        .lista-categorias li:nth-child(even) a {
-            color: rgb(200, 150, 0); /
-        }
+/* SIDEBAR CATEGORIAS */
+.sidebar {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 10px;
+}
 
-        
-        #destacados ul li:nth-child(1) {
-            border: 2px solid rgb(253, 194, 2);
-            transform: scale(1.05); 
-        }
+.lista-categorias {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.lista-categorias li {
+    margin-bottom: 10px;
+}
+
+/* Selectores Avanzados (corregidos) */
+.lista-categorias li:nth-child(odd) a {
+    color: rgb(255, 255, 255); 
+}
+
+.lista-categorias li:nth-child(even) a {
+    color: rgb(200, 150, 0); 
+}
+
+.lista-categorias a {
+    text-decoration: none;
+    transition: margin-left 0.3s;
+    display: inline-block;
+}
+
+.lista-categorias a:hover {
+    margin-left: 10px;
+    text-decoration: underline;
+}
+
+/* JUEGOS DESTACADOS */
+#destacados {
+    background-color: rgba(0, 0, 0, 0.3); 
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.grid-juegos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Grid responsivo automático */
+    gap: 20px;
+    list-style: none;
+    margin-top: 20px;
+}
+
+.grid-juegos li {
+    background-color: rgb(15, 15, 100);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grid-juegos img {
+    border-radius: 5px;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.grid-juegos li:nth-child(1) {
+    border: 2px solid rgb(253, 194, 2);
+    transform: scale(1.02); 
+}
+
+/* FOOTER (FLEXBOX) */
+footer {
+    background-color: rgb(1, 1, 40);
+    border-top: 5px solid rgb(253, 194, 2);
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    text-align: center;
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+footer a {
+    color: rgb(253, 194, 2);
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: rgb(255, 255, 255);
+}
+
+/* MEDIA QUERIES (TABLET Y ESCRITORIO) */
+@media (min-width: 768px) {
+    .categorias {
+        /* Divide el espacio: 250px para la barra lateral y el resto para los juegos */
+        grid-template-columns: 250px 1fr; 
+    }
+    
+    header {
+        flex-direction: row;
+        text-align: left;
+        justify-content: space-between;
+    }
+    
+    .header-content {
+        flex-grow: 1;
+        margin-left: 20px;
+    }
+}
