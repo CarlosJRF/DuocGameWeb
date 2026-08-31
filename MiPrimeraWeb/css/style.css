@@ -9,7 +9,7 @@
 
 body {
     font-family: "Oswald", Arial, sans-serif;
-    font-size: 1rem; /* Tamaños relativos */
+    font-size: 1rem; 
     background-color: rgb(2, 2, 78);
     color: rgb(253, 194, 2);
     line-height: 1.6;
@@ -36,7 +36,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Permitir que fluya en pantallas pequeñas */
+    flex-wrap: wrap; 
     margin-top: 15px;
 }
 
@@ -79,9 +79,9 @@ nav a:hover {
     margin: 40px auto; 
     padding: 0 20px; 
     display: grid;
-    grid-template-columns: 1fr; /* Diseño móvil por defecto */
+    grid-template-columns: 1fr;
     gap: 30px;
-    flex-grow: 1; /* Empuja el footer hacia abajo */
+    flex-grow: 1; 
 }
 
 /* SIDEBAR CATEGORIAS */
@@ -100,7 +100,6 @@ nav a:hover {
     margin-bottom: 10px;
 }
 
-/* Selectores Avanzados (corregidos) */
 .lista-categorias li:nth-child(odd) a {
     color: rgb(255, 255, 255); 
 }
@@ -120,16 +119,27 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* JUEGOS DESTACADOS */
-#destacados {
+/* CONTENEDORES DE SECCIONES */
+#destacados, #nuevos-juegos {
     background-color: rgba(0, 0, 0, 0.3); 
     padding: 30px;
     border-radius: 10px;
+    border: 2px solid transparent;
+    transition: border-color 0.3s;
 }
 
+#destacados:hover {
+    border-color: rgb(200, 150, 0);
+}
+
+#nuevos-juegos:hover {
+    border-color: rgb(255, 255, 255); 
+}
+
+/* TARJETAS DE JUEGOS */
 .grid-juegos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Grid responsivo automático */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
     gap: 20px;
     list-style: none;
     margin-top: 20px;
@@ -137,12 +147,15 @@ nav a:hover {
 
 .grid-juegos li {
     background-color: rgb(15, 15, 100);
+    border: 2px solid transparent; 
+    border-bottom: 4px solid rgb(255, 255, 255);
     padding: 15px;
     border-radius: 8px;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
 }
 
 .grid-juegos img {
@@ -152,9 +165,32 @@ nav a:hover {
     margin-bottom: 15px;
 }
 
-.grid-juegos li:nth-child(1) {
-    border: 2px solid rgb(253, 194, 2);
-    transform: scale(1.02); 
+/* HOVER: JUEGOS DESTACADOS */
+#destacados .grid-juegos li:hover {
+    border-color: rgb(253, 194, 2);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 10px 15px rgba(253, 194, 2, 0.2);
+}
+
+/* ESTILOS Y HOVER: NUEVOS JUEGOS (NTH-CHILD) */
+#nuevos-juegos .grid-juegos li:nth-child(odd) {
+    border-bottom-color: rgb(253, 194, 2); 
+}
+
+#nuevos-juegos .grid-juegos li:nth-child(even) {
+    border-bottom-color: rgb(255, 255, 255); 
+}
+
+#nuevos-juegos .grid-juegos li:nth-child(odd):hover {
+    border-color: rgb(253, 194, 2);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 10px 15px rgba(253, 194, 2, 0.2);
+}
+
+#nuevos-juegos .grid-juegos li:nth-child(even):hover {
+    border-color: rgb(255, 255, 255);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 10px 15px rgba(255, 255, 255, 0.2);
 }
 
 /* FOOTER (FLEXBOX) */
@@ -186,11 +222,20 @@ footer a:hover {
     color: rgb(255, 255, 255);
 }
 
-/* MEDIA QUERIES (TABLET Y ESCRITORIO) */
+/* MEDIA QUERIES(TABLET Y ESCRITORIO) */
 @media (min-width: 768px) {
     .categorias {
-        /* Divide el espacio: 250px para la barra lateral y el resto para los juegos */
         grid-template-columns: 250px 1fr; 
+    }
+    
+    
+    .sidebar {
+        grid-row: span 2;
+    }
+
+    
+    #destacados, #nuevos-juegos {
+        grid-column: 2;
     }
     
     header {
