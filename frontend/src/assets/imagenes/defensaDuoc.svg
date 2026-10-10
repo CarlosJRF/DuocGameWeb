@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="596" viewBox="0 0 400 596">
+  <defs>
+    <linearGradient id="fondo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0f3d1e"/>
+      <stop offset="1" stop-color="#05150a"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="596" fill="url(#fondo)"/>
+
+  <rect x="60" y="340" width="70" height="150" fill="#2e7d32"/><rect x="60" y="320" width="20" height="25" fill="#2e7d32"/><rect x="110" y="320" width="20" height="25" fill="#2e7d32"/>
+  <rect x="270" y="300" width="80" height="190" fill="#388e3c"/><rect x="270" y="278" width="22" height="26" fill="#388e3c"/><rect x="328" y="278" width="22" height="26" fill="#388e3c"/>
+  <path d="M130 420 Q200 300 270 380" fill="none" stroke="#fdc202" stroke-width="5" stroke-dasharray="10 8"/>
+  <rect x="0" y="490" width="400" height="106" fill="#06210d"/>
+  <rect x="14" y="14" width="372" height="568" rx="10" fill="none" stroke="#fdc202" stroke-width="3" opacity="0.6"/>
+  <text x="200" y="110" font-family="Impact, 'Arial Black', sans-serif" font-size="46" fill="#ffffff" text-anchor="middle" stroke="#01012a" stroke-width="2" paint-order="stroke"><tspan x="200" dy="0">DEFENSA</tspan><tspan x="200" dy="52">DUOC</tspan></text>
+  <text x="200" y="560" font-family="sans-serif" font-size="16" fill="#fdc202" text-anchor="middle" letter-spacing="3">DUOC GAME</text>
+</svg>
