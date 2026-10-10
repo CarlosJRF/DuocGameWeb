@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "nombre": "Galaxia Duoc",
+    "categoria": "Aventura",
+    "precio": 19990,
+    "imagen": "GalaxiaDuoc.jpg",
+    "descripcion": "Explora el universo en este emocionante juego de aventuras espaciales."
+  },
+  {
+    "id": 2,
+    "nombre": "Extreme Battle Bots",
+    "categoria": "Acción",
+    "precio": 24990,
+    "imagen": "battleBots.jpg",
+    "descripcion": "Desafiante combate de robots: crea y mejora tu máquina tras cada batalla y sé el campeón."
+  },
+  {
+    "id": 3,
+    "nombre": "Carreras Neón",
+    "categoria": "Deportes",
+    "precio": 17990,
+    "imagen": "carrerasNeon.jpg",
+    "descripcion": "Compite a máxima velocidad en este vibrante mundo cyberpunk de carreras callejeras."
+  },
+  {
+    "id": 4,
+    "nombre": "Sombras del Bosque",
+    "categoria": "Aventura",
+    "precio": 14990,
+    "imagen": "sombrasDelBosque.jpg",
+    "descripcion": "Resuelve oscuros rompecabezas en este thriller psicológico lleno de misterio."
+  },
+  {
+    "id": 5,
+    "nombre": "Asalto Cibernético",
+    "categoria": "Acción",
+    "precio": 21990,
+    "imagen": "asaltoCibernetico.svg",
+    "descripcion": "Infíltrate en una megaciudad controlada por IA y desactiva sus defensas antes de que sea tarde."
+  },
+  {
+    "id": 6,
+    "nombre": "Fútbol Pixel",
+    "categoria": "Deportes",
+    "precio": 12990,
+    "imagen": "futbolPixel.svg",
+    "descripcion": "Partidos rápidos de fútbol retro en 8 bits para jugar solo o con amigos."
+  },
+  {
+    "id": 7,
+    "nombre": "Imperio Estelar",
+    "categoria": "Estrategia",
+    "precio": 22990,
+    "imagen": "imperioEstelar.svg",
+    "descripcion": "Coloniza planetas, gestiona recursos y forja alianzas para dominar la galaxia."
+  },
+  {
+    "id": 8,
+    "nombre": "Defensa Duoc",
+    "categoria": "Estrategia",
+    "precio": 9990,
+    "imagen": "defensaDuoc.svg",
+    "descripcion": "Construye torres y planifica cada oleada para proteger el campus de los invasores."
+  }
+]

@@ -1,0 +1,109 @@
+/*
+ * Estilos propios de DuocGameWeb, complementarios a Bootstrap 5.
+ * La maquetación usa clases de Bootstrap; aquí solo va la identidad visual
+ * (paleta azul oscuro / amarillo y fuente Oswald) y efectos puntuales.
+ */
+
+:root {
+    --dg-azul-profundo: rgb(1, 1, 40);
+    --dg-azul: rgb(2, 2, 78);
+    --dg-azul-tarjeta: rgb(15, 15, 100);
+    --dg-amarillo: rgb(253, 194, 2);
+    --dg-amarillo-oscuro: rgb(200, 150, 0);
+}
+
+/* Paleta DuocGameWeb sobre el tema oscuro de Bootstrap */
+[data-bs-theme="dark"] {
+    --bs-body-font-family: "Oswald", Arial, sans-serif;
+    --bs-body-bg: var(--dg-azul);
+    --bs-body-bg-rgb: 2, 2, 78;
+    --bs-body-color: #f2f2f7;
+    --bs-secondary-color: rgba(242, 242, 247, 0.7);
+    --bs-secondary-bg: var(--dg-azul-tarjeta);
+    --bs-tertiary-bg: var(--dg-azul-profundo);
+    --bs-border-color: rgba(253, 194, 2, 0.25);
+    --bs-heading-color: var(--dg-amarillo);
+    --bs-link-color: var(--dg-amarillo);
+    --bs-link-color-rgb: 253, 194, 2;
+    --bs-link-hover-color: #ffffff;
+    --bs-link-hover-color-rgb: 255, 255, 255;
+}
+
+/* El pie de página queda abajo aunque haya poco contenido */
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== Barra de navegación ===== */
+.barra-navegacion {
+    background-color: var(--dg-azul-profundo);
+    border-bottom: 4px solid var(--dg-amarillo);
+    --bs-navbar-brand-color: var(--dg-amarillo);
+    --bs-navbar-brand-hover-color: #ffffff;
+    --bs-navbar-color: var(--dg-amarillo);
+    --bs-navbar-hover-color: #ffffff;
+    --bs-navbar-active-color: #ffffff;
+}
+
+/* ===== Encabezado ===== */
+.encabezado {
+    background:
+        radial-gradient(circle at 50% 0%, rgba(253, 194, 2, 0.18), transparent 60%),
+        var(--dg-azul-profundo);
+}
+
+/* ===== Secciones ===== */
+.seccion {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.seccion:hover {
+    border-color: var(--dg-amarillo-oscuro);
+}
+
+/* ===== Tarjetas de videojuegos ===== */
+.tarjeta-videojuego {
+    background-color: var(--dg-azul-tarjeta);
+    border: 2px solid transparent;
+    border-bottom: 4px solid #ffffff;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.tarjeta-videojuego:hover {
+    border-color: var(--dg-amarillo);
+    transform: translateY(-6px);
+    box-shadow: 0 10px 15px rgba(253, 194, 2, 0.2);
+}
+
+.tarjeta-videojuego img {
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: top;
+}
+
+.tarjeta-videojuego .precio {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--dg-amarillo);
+}
+
+/* ===== Pie de página ===== */
+.pie-pagina {
+    background-color: var(--dg-azul-profundo);
+    border-top: 5px solid var(--dg-amarillo);
+}
+
+/* Sin animaciones para quien lo prefiera */
+@media (prefers-reduced-motion: reduce) {
+    .tarjeta-videojuego,
+    .tarjeta-videojuego:hover {
+        transition: none;
+        transform: none;
+    }
+}
