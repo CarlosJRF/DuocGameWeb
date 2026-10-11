@@ -2,7 +2,7 @@
 
 Tienda online (simulada, con fines estudiantiles) de videojuegos OpenSource creados por estudiantes.
 Muestra el catálogo en tarjetas, permite filtrar por categoría, gestionar un carrito de compras,
-publicar o quitar videojuegos del catálogo y escribirle al administrador con un formulario de contacto validado.
+publicar nuevos videojuegos en el catálogo y escribirle al administrador con un formulario de contacto validado.
 
 **Sitio publicado:** https://carlosjrf.github.io/DuocGameWeb/
 
@@ -12,7 +12,7 @@ publicar o quitar videojuegos del catálogo y escribirle al administrador con un
 - **Filtro por categoría**: botones Todas / Acción / Aventura / Deportes / Estrategia, con la cantidad de juegos de cada una.
 - **Búsqueda** por nombre o descripción desde la barra de navegación.
 - **Carrito de compras**: agregar, sumar, restar y quitar videojuegos; contador en la barra de navegación y total. Se guarda en `localStorage`, así que sobrevive a recargas.
-- **Publicar / quitar videojuegos** del catálogo con un formulario validado (los cambios duran mientras la página esté abierta).
+- **Publicar videojuegos** en el catálogo con un formulario validado (los juegos publicados duran mientras la página esté abierta).
 - **Formulario de contacto** (nombre, email, mensaje) que valida los datos antes de enviarlos y muestra el error de cada campo.
 - **Avisos (Toast)** no invasivos en la esquina inferior derecha al agregar o quitar productos, publicar un juego o enviar un mensaje.
 - **Estados de carga y error**: spinner mientras llega el catálogo y mensaje con botón "Reintentar" si la API falla.
