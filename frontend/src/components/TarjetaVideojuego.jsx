@@ -2,15 +2,14 @@ import { formateadorPrecio, obtenerImagen } from "./utilidades.js";
 
 /**
  * Tarjeta de un videojuego del catálogo: portada, nombre, categoría, precio,
- * descripción, botón para agregar al carrito y botón para quitarlo del catálogo.
+ * descripción y botón para agregar al carrito.
  *
  * Props:
  * - videojuego: { id, nombre, categoria, precio, descripcion, imagen }
  * - enCarrito: true si el videojuego ya está en el carrito
  * - onAgregar(videojuego): agrega el videojuego al carrito
- * - onEliminar(videojuego): quita el videojuego del catálogo
  */
-export default function TarjetaVideojuego({ videojuego, enCarrito, onAgregar, onEliminar }) {
+export default function TarjetaVideojuego({ videojuego, enCarrito, onAgregar }) {
     return (
         <div className="col">
             <article className="card tarjeta-videojuego h-100">
@@ -39,13 +38,6 @@ export default function TarjetaVideojuego({ videojuego, enCarrito, onAgregar, on
                             disabled={enCarrito}
                         >
                             {enCarrito ? "En el carrito" : "Agregar al carrito"}
-                        </button>
-                        <button
-                            type="button"
-                            className="btn btn-link btn-sm link-danger w-100 mt-1"
-                            onClick={() => onEliminar(videojuego)}
-                        >
-                            Quitar del catálogo
                         </button>
                     </div>
                 </div>

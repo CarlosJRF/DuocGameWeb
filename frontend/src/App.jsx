@@ -155,13 +155,6 @@ export default function App() {
         notificar("Videojuego publicado", `«${datos.nombre}» ya aparece en el catálogo.`, "exito");
     }
 
-    // Quita un videojuego del catálogo (y del carrito, si estaba)
-    function eliminarDelCatalogo(videojuego) {
-        setVideojuegos((actuales) => actuales.filter((v) => v.id !== videojuego.id));
-        setCarrito((actual) => actual.filter((item) => item.id !== videojuego.id));
-        notificar("Videojuego quitado del catálogo", `«${videojuego.nombre}» ya no aparece en la tienda.`, "info");
-    }
-
     // ===== Contacto =====
 
     // Sin servidor de correo: se confirma al usuario y se registra en consola
@@ -230,7 +223,6 @@ export default function App() {
                         error={error}
                         carrito={carrito}
                         onAgregar={agregarAlCarrito}
-                        onEliminar={eliminarDelCatalogo}
                         onReintentar={cargarVideojuegos}
                     />
                 </section>

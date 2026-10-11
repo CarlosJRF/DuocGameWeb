@@ -11,10 +11,9 @@ import TarjetaVideojuego from "./TarjetaVideojuego.jsx";
  * - error: mensaje de error o null
  * - carrito: items del carrito, para saber qué videojuegos ya están agregados
  * - onAgregar(videojuego): agrega un videojuego al carrito
- * - onEliminar(videojuego): quita un videojuego del catálogo
  * - onReintentar(): vuelve a consultar la API
  */
-export default function ListaVideojuegos({ videojuegos, loading, error, carrito, onAgregar, onEliminar, onReintentar }) {
+export default function ListaVideojuegos({ videojuegos, loading, error, carrito, onAgregar, onReintentar }) {
     if (loading) {
         return (
             <div className="d-flex flex-column align-items-center my-5">
@@ -51,7 +50,6 @@ export default function ListaVideojuegos({ videojuegos, loading, error, carrito,
                     videojuego={videojuego}
                     enCarrito={carrito.some((item) => item.id === videojuego.id)}
                     onAgregar={onAgregar}
-                    onEliminar={onEliminar}
                 />
             ))}
         </div>
